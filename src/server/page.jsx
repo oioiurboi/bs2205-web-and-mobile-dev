@@ -1,27 +1,24 @@
-const Lazy = require('./lazy');
-
 const React = require('react');
 const ReactDown = require('react-dom');
+// const { Lazy } = require('./lazy.jsx');
 
-function Page() {
+export default function Page() {
   return (
     <html>
       <head>
-        <script
+        {/* <script
           defer
           src='/client/page.js'
-        ></script>
+        ></script> */}
       </head>
       <body>
         Hello World!
         <div>
-          <React.Suspense fallback={null}>
-            <Lazy.Lazy />
-          </React.Suspense>
+          {/* <React.Suspense fallback={null}>
+            <Lazy/>
+          </React.Suspense> */}
         </div>
       </body>
     </html>
   )
 }
-
-module.exports = { Page }
