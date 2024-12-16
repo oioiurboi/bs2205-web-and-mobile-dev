@@ -6,7 +6,12 @@ const ReactDown = require('react-dom');
 function Page() {
   return (
     <html>
-      <head></head>
+      <head>
+        <script
+          defer
+          src='/client/page.js'
+        ></script>
+      </head>
       <body>
         Hello World!
         <div>
