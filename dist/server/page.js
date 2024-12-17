@@ -16,7 +16,7 @@ function Page() {
     setIncrement = _React$useState2[1];
   return /*#__PURE__*/React.createElement("html", null, /*#__PURE__*/React.createElement("head", null, /*#__PURE__*/React.createElement("script", {
     defer: true,
-    src: "/client/page.js"
+    src: "page.js"
   })), /*#__PURE__*/React.createElement("body", null, "Hello World!", /*#__PURE__*/React.createElement(Lazy, null)));
 }
 module.exports = Page;

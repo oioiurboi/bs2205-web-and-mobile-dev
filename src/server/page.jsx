@@ -10,7 +10,7 @@ function Page() {
       <head>
         <script
           defer
-          src="/client/page.js"
+          src="page.js"
         />
       </head>
       <body>

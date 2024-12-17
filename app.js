@@ -6,7 +6,7 @@ const Page = require('./dist/server/page');
 
 const app = express();
 const port = 3000;
-const dist = path.join(__dirname, 'dist');
+const distClient = path.join(__dirname, 'dist/client');
 
 app.get('/', (req, res) => {
   // const rawIndexHtml = renderToString(createElement(Page));
@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/*', (req, res) => {
-  res.sendFile(req.url, { root: dist });
+  res.sendFile(req.url, { root: distClient });
 });
 
 app.listen(port, () => {
