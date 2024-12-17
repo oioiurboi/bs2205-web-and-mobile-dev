@@ -1,5 +1,5 @@
-const { createContext } = require("react");
 const { hydrateRoot } = require("react-dom/client");
-const { Page } = require("../../dist/server/page");
+const { createElement } = require("react");
+const Page = require("../server/page.jsx");
 
-hydrateRoot(document, createContext(Page));
+hydrateRoot(document, createElement(Page));

@@ -1,24 +1,24 @@
 const React = require('react');
 const ReactDown = require('react-dom');
-// const { Lazy } = require('./lazy.jsx');
+const Lazy = require('./lazy');
 
-export default function Page() {
+function Page() {
+  const [increment, setIncrement] = React.useState(0);
+
   return (
     <html>
       <head>
-        {/* <script
+        <script
           defer
-          src='/client/page.js'
-        ></script> */}
+          src="/client/page.js"
+        />
       </head>
       <body>
         Hello World!
-        <div>
-          {/* <React.Suspense fallback={null}>
-            <Lazy/>
-          </React.Suspense> */}
-        </div>
+        <Lazy/>
       </body>
     </html>
   )
 }
+
+module.exports = Page;

@@ -2,54 +2,38 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    "server/page": "./src/server/page.jsx",
-    // "server/lazy": "./src/server/lazy.jsx",
-    // "client/page": "./src/client/page.jsx",
+    "client/page": "./src/client/page.jsx",
   },
   output: {
-    library: {
-      name: 'test',
-      type: 'commonjs2',
-      export: 'default',
-    },
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true,
+  },
+  /**
+   * Webpack doesn't like src/server/page.jsx
+   * importing Lazy without an extension,
+   * however it can't explicitly be .jsx
+   * because then the import in dist/server/page.js
+   * would also be using that, when it would
+   * want .js, or no extension at all.
+   * 
+   * As far as I'm concerned, this just stops
+   * Webpack complaining.
+   */
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
   },
   module: {
     rules: [
       {
         test: /\.jsx$/i,
+        exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: [
-              '@babel/preset-react'
-            ],
-            // plugins: ["@babel/plugin-transform-modules-commonjs"]
+            presets: ['@babel/preset-env', '@babel/preset-react']
           },
         },
       },
-      // {
-      //   test: /^\.src\/client\/[\S]+\.jsx$/i,
-      //   exclude: /node_modules/,
-      //   use: {
-      //     loader: "babel-loader",
-      //     options: {
-      //       presets: ['@babel/preset-env', '@babel/preset-react']
-      //     }
-      //   }
-      // },
-      // {
-      //   test: /^\.src\/server\/[\S]+\.jsx$/i,
-      //   exclude: /node_modules/,
-      //   use: {
-      //     loader: "babel-loader",
-      //     options: {
-      //       presets: ['@babel/preset-react']
-      //     }
-      //   }
-      // },
     ],
   },
 };
