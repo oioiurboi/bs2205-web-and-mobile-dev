@@ -14,11 +14,27 @@ function Page() {
         <div className='splash'>
           <div>
             <div className='tagline'>Find your zen...</div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{
+              display: "flex",
+              justifyContent: "center",
+              position: "relative",
+            }}>
               <input
                 className='searchbar'
                 placeholder='Address, School, Town, City...'
               />
+              <button style={{
+                cursor: "pointer",
+                border: "0px none",
+                backgroundColor: "white",
+                right: "1rem",
+                top: 0,
+                bottom: 0,
+                position: "absolute",
+                alignSelf: "center",
+                fontFamily: "sans-serif",
+                fontSize: "1rem",
+              }}>Go</button>
             </div>
           </div>
         </div>

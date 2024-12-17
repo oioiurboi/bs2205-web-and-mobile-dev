@@ -22,11 +22,25 @@ function Page() {
   }, "Find your zen..."), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
-      justifyContent: "center"
+      justifyContent: "center",
+      position: "relative"
     }
   }, /*#__PURE__*/React.createElement("input", {
     className: "searchbar",
     placeholder: "Address, School, Town, City..."
-  }))))));
+  }), /*#__PURE__*/React.createElement("button", {
+    style: {
+      cursor: "pointer",
+      border: "0px none",
+      backgroundColor: "white",
+      right: "1rem",
+      top: 0,
+      bottom: 0,
+      position: "absolute",
+      alignSelf: "center",
+      fontFamily: "sans-serif",
+      fontSize: "1rem"
+    }
+  }, "Go"))))));
 }
 module.exports = Page;
