@@ -1,3 +1,7 @@
+/**
+ * For development purposes only.
+ */
+
 const { MongoClient, ServerApiVersion } = require("mongodb");
 require('dotenv').config();
 
