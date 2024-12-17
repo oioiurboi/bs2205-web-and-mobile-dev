@@ -3,18 +3,25 @@ const ReactDown = require('react-dom');
 const Layout = require('./layout');
 
 function Page() {
-  const [increment, setIncrement] = React.useState(0);
-
   return (
     <Layout>
-      <script defer src='/page.js'/>
+      <script defer src='/page.js' />
+      <link rel="stylesheet" href="style.css" />
       <div style={{
         border: "1px solid black",
         flexGrow: 1
       }}>
-        <button
-          onClick={() => setIncrement(increment + 1)}
-        >{increment}</button>
+        <div className='splash'>
+          <div>
+            <div className='tagline'>Find your zen...</div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <input
+                className='searchbar'
+                placeholder='Address, School, Town, City...'
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   )
