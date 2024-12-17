@@ -25,6 +25,10 @@ module.exports = {
   module: {
     rules: [
       {
+        /**
+         * Could make `test` more granular, but I do not
+         * know how it likes to format paths.
+         */
         test: /\.jsx$/i,
         exclude: /node_modules/,
         use: {
