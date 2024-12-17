@@ -1,23 +1,20 @@
 const React = require('react');
 const ReactDown = require('react-dom');
-const Lazy = require('./lazy');
+const Layout = require('./layout');
 
 function Page() {
   const [increment, setIncrement] = React.useState(0);
 
   return (
-    <html>
-      <head>
-        <script
-          defer
-          src="page.js"
-        />
-      </head>
-      <body>
-        Hello World!
-        <Lazy/>
-      </body>
-    </html>
+    <Layout>
+      <script
+        defer
+        src='/page.js'
+      />
+      <button
+        onClick={() => setIncrement(increment + 1)}
+      >{increment}</button>
+    </Layout>
   )
 }
 

@@ -8,15 +8,19 @@ function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" !=
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var React = require('react');
 var ReactDown = require('react-dom');
-var Lazy = require('./lazy');
+var Layout = require('./layout');
 function Page() {
   var _React$useState = React.useState(0),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     increment = _React$useState2[0],
     setIncrement = _React$useState2[1];
-  return /*#__PURE__*/React.createElement("html", null, /*#__PURE__*/React.createElement("head", null, /*#__PURE__*/React.createElement("script", {
+  return /*#__PURE__*/React.createElement(Layout, null, /*#__PURE__*/React.createElement("script", {
     defer: true,
-    src: "page.js"
-  })), /*#__PURE__*/React.createElement("body", null, "Hello World!", /*#__PURE__*/React.createElement(Lazy, null)));
+    src: "/page.js"
+  }), /*#__PURE__*/React.createElement("button", {
+    onClick: function onClick() {
+      return setIncrement(increment + 1);
+    }
+  }, increment));
 }
 module.exports = Page;
