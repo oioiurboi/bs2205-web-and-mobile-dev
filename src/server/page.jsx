@@ -3,6 +3,15 @@ const ReactDown = require('react-dom');
 const Layout = require('./layout');
 
 function Page() {
+  const [props, setProps] = React.useState([]);
+
+  React.useEffect(async () => {
+    const properties = await fetch(
+      "/api/get-all-properties"
+    ).then(res => res.json());
+    setProps(properties);
+  }, []);
+
   return (
     <Layout>
       <script defer src='/page.js' />
@@ -37,6 +46,9 @@ function Page() {
               }}>Go</button>
             </div>
           </div>
+        </div>
+        <div className='properties'>
+          {props.map(prop => <div className='property'>{JSON.stringify(prop, null, 2)}</div>)}
         </div>
       </div>
     </Layout>

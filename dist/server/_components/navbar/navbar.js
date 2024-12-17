@@ -8,8 +8,15 @@ function Navbar() {
   }, /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
     href: "_components/navbar/style.css"
-  }), /*#__PURE__*/React.createElement("button", {
+  }), /*#__PURE__*/React.createElement("a", {
+    href: "/",
     className: "logo"
-  }, "houzen"), /*#__PURE__*/React.createElement("button", null, "Buy"), /*#__PURE__*/React.createElement("button", null, "Sell"), /*#__PURE__*/React.createElement("button", null, "Rent"));
+  }, "houzen"), /*#__PURE__*/React.createElement("a", {
+    href: "/"
+  }, "Buy"), /*#__PURE__*/React.createElement("a", {
+    href: "/sell"
+  }, "Sell"), /*#__PURE__*/React.createElement("a", {
+    href: "/"
+  }, "Rent"));
 }
 module.exports = Navbar;

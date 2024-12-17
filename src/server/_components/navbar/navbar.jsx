@@ -5,10 +5,10 @@ function Navbar() {
   return (
     <div className='navbar'>
       <link rel="stylesheet" href="_components/navbar/style.css" />
-      <button className='logo'>houzen</button>
-      <button>Buy</button>
-      <button>Sell</button>
-      <button>Rent</button>
+      <a href="/" className='logo'>houzen</a>
+      <a href='/'>Buy</a>
+      <a href='/sell'>Sell</a>
+      <a href='/'>Rent</a>
     </div>
   )
 }
