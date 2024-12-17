@@ -5,7 +5,9 @@ function Navbar() {
   return (
     <div className='test'>
       <link rel="stylesheet" href="_components/navbar/style.css" />
-      test
+      <button>Buy</button>
+      <button>Sell</button>
+      <button>Rent</button>
     </div>
   )
 }
