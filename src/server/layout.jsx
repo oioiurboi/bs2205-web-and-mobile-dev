@@ -5,8 +5,14 @@ const Navbar = require('./_components/navbar/navbar');
 function Layout({ children }) {
   return (
     <html>
-      <head></head>
-      <body>
+      <head>
+      </head>
+      <body style={{
+        margin: 0,
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+      }}>
         <Navbar/>
         {children}
       </body>

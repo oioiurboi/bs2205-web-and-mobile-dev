@@ -7,13 +7,15 @@ function Page() {
 
   return (
     <Layout>
-      <script
-        defer
-        src='/page.js'
-      />
-      <button
-        onClick={() => setIncrement(increment + 1)}
-      >{increment}</button>
+      <script defer src='/page.js'/>
+      <div style={{
+        border: "1px solid black",
+        flexGrow: 1
+      }}>
+        <button
+          onClick={() => setIncrement(increment + 1)}
+        >{increment}</button>
+      </div>
     </Layout>
   )
 }
