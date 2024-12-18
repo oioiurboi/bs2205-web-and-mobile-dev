@@ -12,7 +12,8 @@ function NumGuard(value) {
 }
 function PropertyCard(_ref) {
   var property = _ref.property;
-  var addressFirstLine = property.addressFirstLine,
+  var _id = property._id,
+    addressFirstLine = property.addressFirstLine,
     place = property.place,
     postcode = property.postcode,
     price = property.price,
@@ -21,7 +22,10 @@ function PropertyCard(_ref) {
     beds = property.beds,
     baths = property.baths;
   return /*#__PURE__*/React.createElement("div", {
-    className: "container"
+    className: "container",
+    onClick: function onClick() {
+      location.href = "/property?id=".concat(_id);
+    }
   }, /*#__PURE__*/React.createElement("link", {
     rel: "stylesheet",
     href: "_components/property-card/style.css"

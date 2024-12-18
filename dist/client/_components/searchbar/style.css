@@ -16,6 +16,8 @@
   cursor: pointer;
   border: 0px none;
   background-color: white;
+  height: 80%;
+  padding: 0 0.5rem 0 0.5rem;
   right: 1rem;
   top: 0;
   bottom: 0;

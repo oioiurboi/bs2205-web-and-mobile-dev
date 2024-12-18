@@ -16,6 +16,7 @@ function PropertyCard({
   property
 }) {
   const {
+    _id,
     addressFirstLine,
     place,
     postcode,
@@ -27,12 +28,15 @@ function PropertyCard({
   } = property;
 
   return (
-    <div className="container">
+    <div className="container"
+      onClick={() => {
+        location.href=`/property?id=${_id}`
+      }}
+    >
       <link rel="stylesheet" href="_components/property-card/style.css" />
+
       {/* Placeholder */}
-      <img
-        src="https://media.rightmove.co.uk/66k/65827/153756641/65827_SLA012396569_IMG_01_0000.jpeg"
-      />
+      <img src="https://media.rightmove.co.uk/66k/65827/153756641/65827_SLA012396569_IMG_01_0000.jpeg"/>
       <div className="details">
         <div className="features">
           <span>{`beds ${NumGuard(beds, "")}`}</span>
