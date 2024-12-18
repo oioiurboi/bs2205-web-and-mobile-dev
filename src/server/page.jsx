@@ -1,7 +1,9 @@
 const React = require('react');
 const ReactDom = require('react-dom');
+
 const Layout = require('./layout');
 const Searchbar = require('./_components/searchbar/searchbar');
+const PropertyCard = require('./_components/property-card/property-card');
 
 function Page() {
 
@@ -27,7 +29,7 @@ function Page() {
           </div>
         </div>
         <div className='properties'>
-          {props.map(prop => <div className='property'>{JSON.stringify(prop, null, 2)}</div>)}
+          {props.map(prop => <PropertyCard property={prop}/>)}
         </div>
       </div>
     </Layout>

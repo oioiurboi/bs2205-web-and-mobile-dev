@@ -5,7 +5,10 @@ var ReactDom = require('react-dom');
 var Navbar = require('./_components/navbar/navbar');
 function Layout(_ref) {
   var children = _ref.children;
-  return /*#__PURE__*/React.createElement("html", null, /*#__PURE__*/React.createElement("head", null), /*#__PURE__*/React.createElement("body", {
+  return /*#__PURE__*/React.createElement("html", null, /*#__PURE__*/React.createElement("head", null, /*#__PURE__*/React.createElement("link", {
+    rel: "stylesheet",
+    href: "global.css"
+  })), /*#__PURE__*/React.createElement("body", {
     style: {
       margin: 0,
       minHeight: "100vh",

@@ -24,22 +24,21 @@
   grid-template-columns: auto;
   padding: 1rem 1rem 0 1rem;
 }
-.property {
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 1rem 1rem 1rem 1rem;
-}
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 700px) {
   .properties {
     display: grid;
     gap: 1rem;
     grid-template-columns: auto auto;
     padding: 1rem 1rem 0 1rem;
   }
-  .property {
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 1rem 1rem 1rem 1rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .properties {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: auto auto auto;
+    padding: 1rem 1rem 0 1rem;
   }
 }

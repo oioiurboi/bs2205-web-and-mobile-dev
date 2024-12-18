@@ -14,6 +14,7 @@ var React = require('react');
 var ReactDom = require('react-dom');
 var Layout = require('./layout');
 var Searchbar = require('./_components/searchbar/searchbar');
+var PropertyCard = require('./_components/property-card/property-card');
 function Page() {
   // Get-Properties Hook
   var _React$useState = React.useState([]),
@@ -55,9 +56,9 @@ function Page() {
   }, "Find your zen..."), /*#__PURE__*/React.createElement(Searchbar, null))), /*#__PURE__*/React.createElement("div", {
     className: "properties"
   }, props.map(function (prop) {
-    return /*#__PURE__*/React.createElement("div", {
-      className: "property"
-    }, JSON.stringify(prop, null, 2));
+    return /*#__PURE__*/React.createElement(PropertyCard, {
+      property: prop
+    });
   }))));
 }
 module.exports = Page;
