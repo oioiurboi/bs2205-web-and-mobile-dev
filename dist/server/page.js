@@ -11,9 +11,11 @@ function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length)
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 var React = require('react');
-var ReactDown = require('react-dom');
+var ReactDom = require('react-dom');
 var Layout = require('./layout');
+var Searchbar = require('./_components/searchbar/searchbar');
 function Page() {
+  // Get-Properties Hook
   var _React$useState = React.useState([]),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     props = _React$useState2[0],
@@ -43,37 +45,14 @@ function Page() {
     rel: "stylesheet",
     href: "style.css"
   }), /*#__PURE__*/React.createElement("div", {
-    style: {
-      border: "1px solid black",
-      flexGrow: 1
-    }
+    id: "container"
   }, /*#__PURE__*/React.createElement("div", {
-    className: "splash"
-  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    className: "splash-container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "splash-content"
+  }, /*#__PURE__*/React.createElement("div", {
     className: "tagline"
-  }, "Find your zen..."), /*#__PURE__*/React.createElement("div", {
-    style: {
-      display: "flex",
-      justifyContent: "center",
-      position: "relative"
-    }
-  }, /*#__PURE__*/React.createElement("input", {
-    className: "searchbar",
-    placeholder: "Address, School, Town, City..."
-  }), /*#__PURE__*/React.createElement("button", {
-    style: {
-      cursor: "pointer",
-      border: "0px none",
-      backgroundColor: "white",
-      right: "1rem",
-      top: 0,
-      bottom: 0,
-      position: "absolute",
-      alignSelf: "center",
-      fontFamily: "sans-serif",
-      fontSize: "1rem"
-    }
-  }, "Go")))), /*#__PURE__*/React.createElement("div", {
+  }, "Find your zen..."), /*#__PURE__*/React.createElement(Searchbar, null))), /*#__PURE__*/React.createElement("div", {
     className: "properties"
   }, props.map(function (prop) {
     return /*#__PURE__*/React.createElement("div", {

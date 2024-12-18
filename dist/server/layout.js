@@ -1,7 +1,7 @@
 "use strict";
 
 var React = require('react');
-var ReactDown = require('react-dom');
+var ReactDom = require('react-dom');
 var Navbar = require('./_components/navbar/navbar');
 function Layout(_ref) {
   var children = _ref.children;

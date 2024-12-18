@@ -1,0 +1,26 @@
+.searchbar-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.searchbar {
+  padding: 1rem 1rem 1rem 1rem;
+  border: 0px none;
+  border-radius: 25px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.searchbar-go {
+  cursor: pointer;
+  border: 0px none;
+  background-color: white;
+  right: 1rem;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  align-self: center;
+  font-family: sans-serif;
+  font-size: 1rem;
+}

@@ -1,13 +1,15 @@
-.splash {
+#container {
+  flex-grow: 1;
+}
+
+.splash-container {
   background-color: #DE1735;
   display: flex;
   justify-content: center;
 }
-
-.splash > div {
+.splash-content {
   padding: 3rem 0 3rem 0;
 }
-
 .tagline {
   font-weight: bold;
   font-size: 4rem;
@@ -16,21 +18,12 @@
   margin-bottom: 2rem;
 }
 
-.searchbar {
-  padding: 1rem 1rem 1rem 1rem;
-  border: 0px none;
-  border-radius: 25px;
-  font-size: 1rem;
-  width: 100%;
-}
-
 .properties {
   display: grid;
   gap: 1rem;
   grid-template-columns: auto;
   padding: 1rem 1rem 0 1rem;
 }
-
 .property {
   border: 1px solid black;
   border-radius: 20px;
@@ -44,7 +37,6 @@
     grid-template-columns: auto auto;
     padding: 1rem 1rem 0 1rem;
   }
-
   .property {
     border: 1px solid black;
     border-radius: 20px;

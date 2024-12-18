@@ -1,5 +1,5 @@
 const React = require('react');
-const ReactDown = require('react-dom');
+const ReactDom = require('react-dom');
 const Navbar = require('./_components/navbar/navbar');
 
 function Layout({ children }) {
