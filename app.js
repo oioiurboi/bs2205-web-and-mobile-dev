@@ -16,7 +16,7 @@ const GetAllProperties = require('./api-handlers/get-all-properties');
 const GetPropertyById = require('./api-handlers/get-property-by-id');
 
 const app = express();
-const { PORT: SERVER_PORT } = process.env;
+const { PORT: PORT } = process.env;
 const distClient = path.join(__dirname, 'dist/client');
 
 /**
@@ -52,6 +52,6 @@ app.get('/*', (req, res) => {
 });
 
 // Start
-app.listen(SERVER_PORT, () => {
-  console.log(`listening on port ${SERVER_PORT}`);
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
 });
