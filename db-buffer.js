@@ -2,7 +2,7 @@
  * For development purposes only.
  */
 
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 require('dotenv').config();
 
 const { CONN } = process.env;
@@ -14,16 +14,19 @@ const client = new MongoClient(CONN, {
   }
 });
 
-async function run() {
+async function GetAllProperties() {
   try {
     await client.connect();
     const db = client.db("houzen");
     const properties = db.collection("properties");
-    const result = await properties.find({}).toArray();
+    const result = await properties.findOne({ _id: new ObjectId("676155d4167ab57fa479a1b8") });
     console.log(result);
+  } catch (e) {
+    console.log(e);
+    return [];
   } finally {
     await client.close();
   }
 }
 
-run().catch(console.dir);
+GetAllProperties().catch(console.dir);

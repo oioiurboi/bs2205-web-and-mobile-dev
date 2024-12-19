@@ -12,15 +12,22 @@ function Page() {
   }, []);
 
   // Fetch-Property-By-Id Hook
-  const [details, setDetails] = React.useState();
+  const [property, setProperty] = React.useState();
   React.useEffect(() => {
-    
-  })
+    if (!id) { return }
+    const p = fetch(`/api/get-property-by-id?id=${id}`)
+      .then(res => res.json())
+      /*Have to do this because the minifier
+      was having some weird issue with the
+      async function, so I couldn't just
+      await `fetch`.*/
+      .then(res => { setProperty(res) });
+  }, [id]);
 
   return (
     <Layout>
       <script defer src="/property/page.js" />
-      {id}
+      {!property ? id : JSON.stringify(property, null, 2)}
     </Layout>
   )
 }

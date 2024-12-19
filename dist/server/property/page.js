@@ -19,9 +19,29 @@ function Page() {
     var query = new URLSearchParams(window.location.search);
     setId(query.get('id'));
   }, []);
+
+  // Fetch-Property-By-Id Hook
+  var _React$useState3 = React.useState(),
+    _React$useState4 = _slicedToArray(_React$useState3, 2),
+    property = _React$useState4[0],
+    setProperty = _React$useState4[1];
+  React.useEffect(function () {
+    if (!id) {
+      return;
+    }
+    var p = fetch("/api/get-property-by-id?id=".concat(id)).then(function (res) {
+      return res.json();
+    })
+    /*Have to do this because the minifier
+    was having some weird issue with the
+    async function, so I couldn't just
+    await `fetch`.*/.then(function (res) {
+      setProperty(res);
+    });
+  }, [id]);
   return /*#__PURE__*/React.createElement(Layout, null, /*#__PURE__*/React.createElement("script", {
     defer: true,
     src: "/property/page.js"
-  }), id);
+  }), !property ? id : JSON.stringify(property, null, 2));
 }
 module.exports = Page;
