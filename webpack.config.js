@@ -3,7 +3,8 @@ const path = require('path');
 module.exports = {
   entry: {
     "client/page": "./src/client/page.jsx",
-    "client/sell/page": "./src/client/sell/page.jsx"
+    "client/sell/page": "./src/client/sell/page.jsx",
+    "client/property/page": "./src/client/property/page.jsx",
   },
   output: {
     filename: '[name].js',

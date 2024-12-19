@@ -4,11 +4,12 @@ const express = require('express');
 
 // React
 const { createElement } = require('react');
-const { renderToPipeableStream } = require('react-dom/server');
+const { renderToPipeableStream, renderToString } = require('react-dom/server');
 
 // Pages
 const Index = require('./dist/server/page');
 const Sell = require('./dist/server/sell/page');
+const Property = require('./dist/server/property/page');
 
 // Api Handlers
 const GetAllProperties = require('./api-handlers/get-all-properties');
@@ -29,6 +30,11 @@ app.get('/sell', (req, res) => {
   const stream = renderToPipeableStream(createElement(Sell));
   stream.pipe(res);
 });
+
+app.get('/property', (req, res) => {
+  const stream = renderToPipeableStream(createElement(Property));
+  stream.pipe(res);
+})
 
 app.get('/api/get-all-properties', async (req, res) => {
   const properties = await GetAllProperties();
