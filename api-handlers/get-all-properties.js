@@ -1,8 +1,4 @@
-/**
- * For development purposes only.
- */
-
-const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
+const { MongoClient, ServerApiVersion } = require("mongodb");
 require('dotenv').config();
 
 const { CONN } = process.env;
@@ -14,19 +10,18 @@ const client = new MongoClient(CONN, {
   }
 });
 
-async function GetPropertyById(id) {
+async function GetAllProperties() {
   try {
-    if (typeof id !== "string") { throw new Error("Property ID Must Be A String") } // Makes mongo happy, says ObjectId is deprecated otherwise.
     await client.connect();
     const db = client.db("houzen");
     const properties = db.collection("properties");
-    return await properties.findOne({ _id: new ObjectId(id) });
+    return await properties.find({}).toArray();
   } catch (e) {
     console.log(e);
-    return undefined;
+    return [];
   } finally {
     await client.close();
   }
 }
 
-module.exports = GetPropertyById;
+module.exports = GetAllProperties;

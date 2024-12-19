@@ -13,7 +13,7 @@ const Property = require('./dist/server/property/page');
 
 // Api Handlers
 const GetAllProperties = require('./api-handlers/get-all-properties');
-const GetPropertyById = require('./api-handlers/get-all-properties');
+const GetPropertyById = require('./api-handlers/get-property-by-id');
 
 const app = express();
 const port = 3000;
