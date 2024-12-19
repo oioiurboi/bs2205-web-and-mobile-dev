@@ -35,17 +35,17 @@ app.get('/sell', (req, res) => {
 app.get('/property', (req, res) => {
   const stream = renderToPipeableStream(createElement(Property));
   stream.pipe(res);
-})
+});
 
 app.get('/api/get-all-properties', async (req, res) => {
   const properties = await GetAllProperties();
   res.send(properties);
-})
+});
 
 app.get('/api/get-property-by-id', async (req, res) => {
   const property = await GetPropertyById(req.query.id);
   res.send(property);
-})
+});
 
 app.get('/*', (req, res) => {
   res.sendFile(req.url, { root: distClient });

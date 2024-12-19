@@ -8,7 +8,8 @@
   justify-content: center;
 }
 .splash-content {
-  padding: 3rem 0 3rem 0;
+  padding: 3rem 3rem 3rem 3rem;
+  text-align: center;
 }
 .tagline {
   font-weight: bold;
