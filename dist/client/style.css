@@ -8,7 +8,7 @@
   justify-content: center;
 }
 .splash-content {
-  padding: 3rem 3rem 3rem 3rem;
+  padding: 3rem 1rem 3rem 1rem;
   text-align: center;
 }
 .tagline {
@@ -25,6 +25,14 @@
   grid-template-columns: auto;
   padding: 1rem 1rem 0 1rem;
 }
+
+@media only screen and (min-width: 400px) {
+  .splash-content {
+    padding: 3rem 3rem 3rem 3rem;
+    text-align: center;
+  }
+}
+
 
 @media only screen and (min-width: 700px) {
   .properties {

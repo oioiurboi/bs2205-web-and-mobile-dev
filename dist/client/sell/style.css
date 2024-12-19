@@ -3,9 +3,9 @@
   display: flex;
   justify-content: center;
 }
-
 .splash > div {
-  padding: 3rem 0 3rem 0;
+  padding: 3rem 1rem 3rem 1rem;
+  text-align: center;
 }
 
 .tagline {
@@ -41,4 +41,11 @@ input {
   font-size: 1rem;
   width: 100%;
   margin: auto;
+}
+
+@media only screen and (min-width: 400px) {
+  .splash > div {
+    padding: 3rem 3rem 3rem 3rem;
+    text-align: center;
+  }
 }

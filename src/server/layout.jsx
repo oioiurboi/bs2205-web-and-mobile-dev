@@ -8,6 +8,7 @@ function Layout({ children }) {
     <html>
       <head>
         <link rel="stylesheet" href="global.css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body style={{
         margin: 0,
