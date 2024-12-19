@@ -1,6 +1,6 @@
-const path = require('path');
-
 const express = require('express');
+const path = require('path');
+require('dotenv').config();
 
 // React
 const { createElement } = require('react');
@@ -16,7 +16,7 @@ const GetAllProperties = require('./api-handlers/get-all-properties');
 const GetPropertyById = require('./api-handlers/get-property-by-id');
 
 const app = express();
-const port = 3000;
+const { PORT } = process.env;
 const distClient = path.join(__dirname, 'dist/client');
 
 /**
@@ -52,6 +52,6 @@ app.get('/*', (req, res) => {
 });
 
 // Start
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`);
 });
